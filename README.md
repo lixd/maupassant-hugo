@@ -1,5 +1,22 @@
 # Maupassant
 
+## Update
+* 1.增加备案号
+* 2.增加百度统计
+* 3.增加github链接
+
+
+相关配置文件调整
+```toml
+[params]
+    # hm.src = "https://hm.baidu.com/hm.js?2765db46fe986fa867d3cb9e87afdd69";
+    baiduAnalytics = "2765db46fe986fa867d3cb9e87afdd69" #百度统计
+    ICP = "渝ICP备20005680号-1"
+    # 公网安备
+    #IS = "XXX"
+    github = "https://github.com/lixd"
+```
+
 Maupassant theme, ported to Hugo.
 
 1. 预览效果:[飞雪无情的博客](http://www.flysnow.org)

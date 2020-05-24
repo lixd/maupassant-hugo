@@ -2,9 +2,18 @@
     <div class="container">
         &copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL | absURL }}">{{ .Site.Title }} By {{ .Site.Author.name }}</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
-        {{ if .Site.Params.showHostPage }}
-        Hosted by <a rel="nofollow noreferer noopener" href="https://pages.coding.me" target="_blank">Coding Pages</a>.
+        <a  href="https://www.lixueduan.com/" target="_blank">Theme</a> based on <a rel="nofollow noreferer noopener" href="https://github.com/lixd/maupassant-hugo" target="_blank">maupassant</a>.
+        <!--ICP备  -->
+        {{ if .Site.Params.ICP }}
+            <a rel="nofollow noreferer noopener" href="http://www.beian.miit.gov.cn/" target="_blank"> {{ .Site.Params.ICP }}</a>.
+        {{ end }}
+        <!-- 公网安备 -->
+        {{ if .Site.Params.IS }}
+            {{ .Site.Params.ISP }}.
+        {{ end }}
+        <!-- github -->
+        {{ if .Site.Params.github }}
+            <a rel="nofollow noreferer noopener" href="{{ .Site.Params.github }}" target="_blank">Github</a>.
         {{ end }}
     </div>
 </footer>
@@ -65,7 +74,7 @@
             })();
         </script>
     {{- end -}}
-    
+
     <!-- sequence必须要在flow加载之后，否则sequence渲染不成功，原因待分析 -->
     <!-- js-sequence-diagrams -->
     {{- if and (or .Params.sequenceDiagrams.enable (and .Site.Params.sequenceDiagrams.enable (ne .Params.sequenceDiagrams.enable false))) (or .IsPage .IsHome) -}}
@@ -101,7 +110,7 @@
         })();
         </script>
     {{- end -}}
-    
+
     <script type="text/javascript">
         window.MathJax = {
             tex2jax: {
@@ -112,10 +121,23 @@
     </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 {{ end }}
-
+<!-- google_analytics -->
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='{{ "js/totop.js?v=0.0.0" | relURL }}' async=""></script>
 {{ template "_internal/google_analytics_async.html" . }}
+
+<!-- baidu_analytics -->
+{{ if .Site.Params.baiduAnalytics }}
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?{{ .Site.Params.baiduAnalytics }}";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+{{ end }}
 
 {{ if .Site.Params.busuanzi }}
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
