@@ -38,13 +38,8 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- googleAds -->
     {{ if .Site.Params.googleAd }}
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "{{ .Site.Params.googleAd }}",
-        enable_page_level_ads: true
-    });
-    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ .Site.Params.googleAd }}"
+     crossorigin="anonymous"></script>
     {{ end }}
 
     <!-- custom css -->

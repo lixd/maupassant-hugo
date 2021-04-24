@@ -1,6 +1,20 @@
 # Maupassant
 
 ## Update
+
+2021-04-24
+
+* 1.增加GoogleADs
+
+
+相关配置文件调整
+```toml
+[params]
+     googleAd = "ca-pub-xxx"  #谷歌广告ca-pub-xxxxxxxxxxxxxx
+```
+
+2020-03-24
+
 * 1.增加备案号
 * 2.增加百度统计
 * 3.增加github链接
