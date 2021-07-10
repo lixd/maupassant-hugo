@@ -13,6 +13,8 @@
      googleAd = "ca-pub-xxx"  #谷歌广告ca-pub-xxxxxxxxxxxxxx
 ```
 
+具体代码实现在`layouts/partials/head.html`
+
 2020-03-24
 
 * 1.增加备案号
@@ -30,6 +32,8 @@
     #IS = "XXX"
     github = "https://github.com/lixd"
 ```
+
+具体代码实现在`layouts/partials/footer.html`
 
 Maupassant theme, ported to Hugo.
 

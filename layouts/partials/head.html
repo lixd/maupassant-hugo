@@ -36,14 +36,14 @@
         {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- googleAds -->
-    {{ if .Site.Params.googleAd }}
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ .Site.Params.googleAd }}"
-     crossorigin="anonymous"></script>
-    {{ end }}
 
     <!-- custom css -->
     {{ range .Site.Params.customCSS }}
         <link rel="stylesheet" href='{{ "/css/" | relURL }}{{ . }}'>
     {{ end }}
+
+	<!-- googleAds-normal -->
+	{{ if .Site.Params.googleAd }}
+	 <script data-ad-client="{{ .Site.Params.googleAd }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	{{ end }}	
 </head>
